@@ -19,8 +19,9 @@ class Student
 
   def add_student_attributes(attributes_hash)
 
-    attributes_hash.each do |attributes|
-      self.new(attributes)
+    attributes_hash.each_pair do |k,v|
+      self.send(("#{k}="),v)
+      
     end
 
   end
