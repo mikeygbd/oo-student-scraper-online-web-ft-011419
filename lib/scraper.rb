@@ -39,7 +39,7 @@ attr_accessor :all_students
        }
    end
    students
- end	  end
+ end	 
 
   def self.scrape_profile_page(profile_url)
 
