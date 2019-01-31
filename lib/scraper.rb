@@ -17,15 +17,12 @@ attr_accessor :all_students
     student_profile = {}
 
     student_cards.each do |student_card|
-      student_name = student_card.css("h4.student-name").text
-      location = student_card.css("p.student-location").text
-      profile_url = "./fixtures/student-site/" + student_card.css("a").attribute("href").value
       all_students << {
-        :name => student_name,
-        :location => location
-        :profile_url => profile_url
+        :name => student_card.css("h4.student-name").text,
+        :location => student_card.css("p.student-location").text,
+        :profile_url => "./fixtures/student-site/" + student_card.css("a").attribute("href").value
       }
-    
+
     end
     all_students
   end
