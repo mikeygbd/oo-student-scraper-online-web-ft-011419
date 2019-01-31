@@ -26,8 +26,8 @@ attr_accessor :students
     doc = Nokogiri::HTML(open(profile_url))
     students = {}
 
-    doc.css("").each do |student|
-      name = student.css(".student-name").text
+    # doc.css("").each do |student|
+    #   name = student.css(".student-name").text
 
       container = doc.css(".social-icon-container a").collect{|icon| icon.attribute("href").value}
     container.each do |link|
@@ -44,7 +44,7 @@ attr_accessor :students
     student[:profile_quote] = page.css(".profile-quote").text
     student[:bio] = page.css("div.description-holder p").text
     student
-    end
+
   end
 
 end
