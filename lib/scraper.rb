@@ -12,7 +12,7 @@ attr_accessor :all_students
     index_url = open('fixtures/student-site/index.html')
     doc = Nokogiri::HTML(open(index_url))
     # student = Student.new
-    student_cards = doc.css("roster-cards-container student-name")
+    student_cards = doc.css(".student_card")
     all_students =[]
     student_profile = {}
 
