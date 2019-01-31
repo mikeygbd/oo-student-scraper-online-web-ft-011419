@@ -14,7 +14,7 @@ attr_accessor :all_students
     # student = Student.new
     student_cards = doc.css(".student_card")
     all_students =[]
-    student_profile = {}
+    
 
     student_cards.each do |student_card|
       all_students << {
