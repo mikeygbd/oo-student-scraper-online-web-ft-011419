@@ -25,7 +25,7 @@ attr_accessor :all_students
       all_students << student_profile[student.name.to_sym] = {}
 
     end
-    # @all_students
+    @all_students
   end
 
   def self.scrape_profile_page(profile_url)
