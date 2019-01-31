@@ -27,7 +27,7 @@ attr_accessor :all_students
 
   def self.scrape_index_page(index_url)
 
-    index_html = open(index_url)
+    index_html = open('fixtures/student-site/index.html')
    index_doc = Nokogiri::HTML(index_html)
    student_cards = index_doc.css(".student-card")
    students = []
@@ -39,7 +39,7 @@ attr_accessor :all_students
        }
    end
    students
- end	 
+ end
 
   def self.scrape_profile_page(profile_url)
 
