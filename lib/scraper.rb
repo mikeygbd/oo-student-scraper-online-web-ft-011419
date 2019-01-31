@@ -15,6 +15,7 @@ class Scraper
       projects[name.to_sym] = {
 
       }
+    end
   end
 
   def self.scrape_profile_page(profile_url)
