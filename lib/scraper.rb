@@ -25,7 +25,7 @@ attr_accessor :all_students
         :location => location
         :profile_url => profile_url
 
-        
+
       }
 
       student_name = student.css("h4.student-name").text
