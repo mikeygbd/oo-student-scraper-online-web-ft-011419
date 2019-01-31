@@ -7,7 +7,7 @@ class Scraper
 
 attr_accessor :all_students
 
-  def self.scrape_index_page(index_url)
+  def self.scrape_index_page(index_url = "fixtures/student-site/index.htm" )
     html = open('index_url')
     doc = Nokogiri::HTML(open(html))
     student_cards = doc.css(".student_card")
