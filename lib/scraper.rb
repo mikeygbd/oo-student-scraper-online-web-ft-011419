@@ -1,11 +1,12 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
+require_relative './student.rb'
 
 class Scraper
-
+@@html = File.read('fixtures/student-site/index.html')
   def self.scrape_index_page(html)
-    html = File.read('fixtures/student-site/index.html')
+
     page = Nokogiri::HTML(open(html))
     student = Student.new
     all_students =[]
