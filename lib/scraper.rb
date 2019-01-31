@@ -6,13 +6,14 @@ class Scraper
 
   def self.scrape_index_page(html)
     html = File.read('fixtures/student-site/index.html')
-    student = Nokogiri::HTML(open(html))
+    page = Nokogiri::HTML(open(html))
+    student = Student.new
 
     projects = {}
 
-    student.css("roster-cards-container").each do |project|
-      name = project.css("student-name").text
-      projects[name.to_sym] = {
+    page.css("roster-cards-container").each do |project|
+      student.name = project.css("student-name").text
+      projects[student.name.to_sym] = {
 
       }
     end
