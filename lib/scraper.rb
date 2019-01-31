@@ -25,7 +25,6 @@ attr_accessor :students, :attributes
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
     attributes = {}
-
     container = doc.css(".social-icon-container a").collect{|icon| icon.attribute("href").value}
       container.each do |link|
         if link.include?("twitter")
