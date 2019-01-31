@@ -26,25 +26,21 @@ attr_accessor :students
     doc = Nokogiri::HTML(open(profile_url))
     students = {}
 
-    # doc.css("").each do |student|
-    #   name = student.css(".student-name").text
-
-      container = doc.css(".social-icon-container a").collect{|icon| icon.attribute("href").value}
-    container.each do |link|
-      if link.include?("twitter")
-        student[:twitter] = link
-      elsif link.include?("linkedin")
-        student[:linkedin] = link
-      elsif link.include?("github")
-        student[:github] = link
-      elsif link.include?(".com")
-        student[:blog] = link
-      end
+    doc.css("div.social-icon-container a").each do |link|
+    case link.attribute("href").value
+    when /twitter/
+      attributes[:twitter] = link.attribute("href").value
+    when /github/
+      attributes[:github] = link.attribute("href").value
+    when /linkedin/
+      attributes[:linkedin] = link.attribute("href").value
+    else
+        attributes[:blog] = link.attribute("href").value
     end
-    student[:profile_quote] = page.css(".profile-quote").text
-    student[:bio] = page.css("div.description-holder p").text
-    student
-
   end
+  attributes[:profile_quote] = doc.css("div.profile-quote").text
+  attributes[:bio] = doc.css("div.bio-content div.description-holder").text.strip
+  attributes
+end	 
 
 end
