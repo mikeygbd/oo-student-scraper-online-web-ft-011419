@@ -9,7 +9,7 @@ attr_accessor :all_students
 
   def self.scrape_index_page(html)
       binding.pry
-      
+
     html = File.read('fixtures/student-site/index.html')
     page = Nokogiri::HTML(open(html))
 
@@ -19,9 +19,9 @@ attr_accessor :all_students
 
     student_profile = {}
 
-    page.css("roster-cards-container").each do |student|
+    page.css("roster-cards-container student-name").each do |student|
 
-      student_name = student.css("student-name").text
+      student_name = student.css("h4.student-name").text
       all_students << student_profile[student.name.to_sym] = {}
 
     end
