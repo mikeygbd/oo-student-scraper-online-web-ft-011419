@@ -19,6 +19,7 @@ attr_accessor :all_students
         :location => student_card.css("p.student-location").text,
         :profile_url => "./fixtures/student-site/" + student_card.css("a").attribute("href").value
         }
+        all_students << students
 
     end
     all_students
