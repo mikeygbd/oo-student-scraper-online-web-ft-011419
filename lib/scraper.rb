@@ -12,12 +12,13 @@ attr_accessor :all_students
     page = Nokogiri::HTML(open(html))
 
     student = Student.new
+    binding.pry
     @all_students =[]
 
     student_profile = {}
 
     page.css("roster-cards-container").each do |student|
-        binding.pry
+
       student_name = student.css("student-name").text
       all_students << student_profile[student.name.to_sym] = {}
 
