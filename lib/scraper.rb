@@ -6,7 +6,7 @@ class Scraper
 
   def self.scrape_index_page(html)
     html = File.read('fixtures/student-site/index.html')
-    student = Nokogiri::HTML(html)
+    student = Nokogiri::HTML(open(html))
 
     projects = {}
 
