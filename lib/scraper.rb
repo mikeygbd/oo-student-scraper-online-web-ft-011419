@@ -19,7 +19,7 @@ attr_accessor :all_students
 
       student_name = student.css("h4.student-name").text
       location = student.css("p.student-location").text
-      all_students << student_profile[student.name.to_sym] = {}
+      all_students << student_profile[student.name.to_sym] = location
 
     end
     @all_students
