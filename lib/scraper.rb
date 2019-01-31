@@ -8,14 +8,10 @@ class Scraper
 attr_accessor :all_students
 
   def self.scrape_index_page(index_url)
-      # binding.pry
-    index_url = open('fixtures/student-site/index.html')
-    doc = Nokogiri::HTML(open(index_url))
-    # student = Student.new
+    html = open('index_url')
+    doc = Nokogiri::HTML(open(html))
     student_cards = doc.css(".student_card")
     all_students =[]
-
-
     student_cards.collect do |student_card|
       all_students << {
         :name => student_card.css("h4.student-name").text,
