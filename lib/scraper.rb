@@ -9,14 +9,10 @@ attr_accessor :all_students
 
   def self.scrape_index_page(html)
       # binding.pry
-
     html = File.read('fixtures/student-site/index.html')
     page = Nokogiri::HTML(open(html))
-
-    student = Student.new
-
+    # student = Student.new
     @all_students =[]
-
     student_profile = {}
 
     page.css("roster-cards-container student-name").each do |student|
