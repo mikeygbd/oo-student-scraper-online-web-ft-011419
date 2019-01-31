@@ -18,9 +18,9 @@ attr_accessor :all_students
 
     student_cards.collect do |student_card|
       all_students << {
-        :name => student_card_xml.css("h4.student-name").text,
-        :location => student_card_xml.css("p.student-location").text,
-        :profile_url => "./fixtures/student-site/" + student_card_xml.css("a").attribute("href").value
+        :name => student_card.css("h4.student-name").text,
+        :location => student_card.css("p.student-location").text,
+        :profile_url => "./fixtures/student-site/" + student_card.css("a").attribute("href").value
         }
 
     end
