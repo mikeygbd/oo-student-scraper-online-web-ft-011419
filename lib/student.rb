@@ -21,6 +21,7 @@ class Student
 
     attributes_hash.each do |attributes|
       self.new(attributes)
+    end
 
   end
 
