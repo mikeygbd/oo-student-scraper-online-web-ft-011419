@@ -18,7 +18,7 @@ attr_accessor :all_students
     page.css("roster-cards-container").each do |student|
       student_name = student.css("student-name").text
       all_students << student_profile[student.name.to_sym] = {}
-
+binding.pry
     end
     @all_students
   end
