@@ -18,9 +18,10 @@ attr_accessor :all_students
     page.css("roster-cards-container student-name").each do |student|
 
       student_name = student.css("h4.student-name").text
+      binding.pry
       location = student.css("p.student-location").text
       all_students << student_profile[student.name.to_sym] = location
-      binding.pry
+
     end
     @all_students
   end
