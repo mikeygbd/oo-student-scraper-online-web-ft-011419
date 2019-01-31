@@ -5,7 +5,7 @@ require_relative './student.rb'
 
 class Scraper
 
-attr_accessor :students
+attr_accessor :students, :attributes
 
  def self.scrape_index_page(index_url)
    doc = Nokogiri::HTML(open(index_url))
@@ -41,6 +41,6 @@ attr_accessor :students
   attributes[:profile_quote] = doc.css("div.profile-quote").text
   attributes[:bio] = doc.css("div.bio-content div.description-holder").text.strip
   attributes
-end	 
+end
 
 end
