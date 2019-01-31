@@ -26,6 +26,7 @@ attr_accessor :all_students
         :profile_url => profile_url
       }
     end
+    end
     all_students
   end
 
