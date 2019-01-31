@@ -25,14 +25,8 @@ attr_accessor :all_students
         :location => location
         :profile_url => profile_url
       }
-
-      student_name = student.css("h4.student-name").text
-      # binding.pry
-      location = student.css("p.student-location").text
-      all_students << student_profile[student.name.to_sym] = location
-
     end
-    @all_students
+    all_students
   end
 
   def self.scrape_profile_page(profile_url)
