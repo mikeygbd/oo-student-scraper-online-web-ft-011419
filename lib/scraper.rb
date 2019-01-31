@@ -24,7 +24,7 @@ attr_accessor :students, :attributes
 
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
-    students = {}
+    attributes = {}
 
     doc.css("div.social-icon-container a").each do |link|
     case link.attribute("href").value
