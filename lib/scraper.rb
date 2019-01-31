@@ -1,9 +1,10 @@
+require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
 class Scraper
-
-  def self.scrape_index_page(./fixtures/student-site/index.html)
+@@html = File.read('fixtures/kickstarter.html')
+  def self.scrape_index_page(html)
 
   end
 
