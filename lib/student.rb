@@ -10,6 +10,7 @@ class Student
 
     @@all << self
   end
+  end
 
   def self.create_from_collection(students_array)
 
