@@ -5,7 +5,7 @@ require_relative './student.rb'
 
 class Scraper
 
-attr_accessor :all_students
+attr_accessor :students
 
   # def self.scrape_index_page(index_url)
   #   index_url = open('fixtures/student-site/index.html')
