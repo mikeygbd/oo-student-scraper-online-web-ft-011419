@@ -45,7 +45,7 @@ attr_accessor :students
    page = Nokogiri::HTML(open(index_url))
    students = []
 
-   page.css("div.student-card").each do |student|
+   page.css(".student-card").each do |student|
      name = student.css(".student-name").text
      location = student.css(".student-location").text
      profile_url = student.css("a").attribute("href").value
