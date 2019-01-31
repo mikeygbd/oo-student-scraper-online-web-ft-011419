@@ -8,7 +8,7 @@ class Scraper
 attr_accessor :all_students
 
   def self.scrape_index_page(html)
-      binding.pry
+      # binding.pry
 
     html = File.read('fixtures/student-site/index.html')
     page = Nokogiri::HTML(open(html))
