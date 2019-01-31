@@ -25,7 +25,7 @@ attr_accessor :all_students
         :location => location
         :profile_url => profile_url
       }
-    end
+    
     end
     all_students
   end
